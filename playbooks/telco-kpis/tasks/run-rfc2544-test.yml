@@ -289,6 +289,8 @@
     detach: false
     rm: true
     command: /workspace/artifacts/run_rfc2544_test.sh
+    env:
+      RAN_METRICS_DISABLE_PUSHGATEWAY_UPLOAD: "true"
     volume:
       - "{{ spoke_kubeconfig }}:/tmp/kubeconfig-ro:ro,Z"
       - "{{ artifacts_dir.path }}:/workspace/artifacts:rw,Z"
